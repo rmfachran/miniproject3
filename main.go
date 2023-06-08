@@ -1,12 +1,12 @@
 package main
 
 import (
-	_ ".github/joho/godotenv/autoload"
 	"crud/modules/actors"
 	"crud/modules/customer"
 	"crud/utils/db"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	_ "github.com/joho/godotenv/autoload"
 )
 
 func main() {

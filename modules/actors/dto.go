@@ -30,6 +30,15 @@ type SuccessLoginAdmin struct {
 	Username string `json:"username"`
 	Token    string `json:"token"`
 }
+type SuccessApproveAdmin struct {
+	dto.ResponseMeta
+	Data interface{} `json:"data"`
+}
+
+type SuccessGetCustomers struct {
+	dto.ResponseMeta
+	Data interface{} `json:"data"`
+}
 
 type SuccessUpdate struct {
 	dto.ResponseMeta

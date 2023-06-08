@@ -33,15 +33,31 @@ func (r RouterActor) Handle(router *gin.Engine) {
 	admin.POST("/login",
 		r.ActorRequestHandler.LoginAdmin,
 	)
+	superAdmin.Use(middleware.AuthMiddleware())
 	admin.Use(middleware.AuthMiddleware())
-
+	//admin
 	admin.GET("/:id",
 		r.ActorRequestHandler.GetAdmin,
+	)
+	admin.GET("/customers",
+		r.ActorRequestHandler.GetCustomers,
 	)
 	admin.PUT("/update/:id",
 		r.ActorRequestHandler.UpdateAdmin,
 	)
-	admin.PUT("/approve/:id",
+	//superadmin
+	superAdmin.PUT("/approve/:id",
 		r.ActorRequestHandler.ApproveAdmin,
 	)
+
+	superAdmin.POST("/register-admin",
+		r.ActorRequestHandler.CreateAdmin,
+	)
+	superAdmin.GET("/:id",
+		r.ActorRequestHandler.GetAdmin,
+	)
+	admin.GET("/customers/",
+		r.ActorRequestHandler.GetCustomers,
+	)
+
 }
