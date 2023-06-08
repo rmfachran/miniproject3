@@ -1,7 +1,7 @@
 package actors
 
 import (
-	"crud/dto"
+	"github.com/rmfachran/miniproject2/dto"
 	"time"
 )
 

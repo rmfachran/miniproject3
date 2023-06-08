@@ -1,7 +1,7 @@
 package customer
 
 import (
-	"crud/dto"
+	"github.com/rmfachran/miniproject2/dto"
 )
 
 type ControllerCustomer interface {

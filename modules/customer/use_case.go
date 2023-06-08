@@ -1,8 +1,8 @@
 package customer
 
 import (
-	"crud/entity"
-	"crud/repository"
+	"github.com/rmfachran/miniproject2/entity"
+	"github.com/rmfachran/miniproject2/repository"
 )
 
 type UseCaseCustomer interface {

@@ -1,8 +1,8 @@
 package actors
 
 import (
-	"crud/middleware"
 	"github.com/gin-gonic/gin"
+	"github.com/rmfachran/miniproject2/middleware"
 	"gorm.io/gorm"
 )
 

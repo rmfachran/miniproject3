@@ -16,7 +16,7 @@ type Actor struct {
 func NewActor(dbCrud *gorm.DB) Actor {
 	return Actor{db: dbCrud}
 }
-
+//go:generate mockery --name ActorInterfaceRepo
 type ActorInterfaceRepo interface {
 	CreateAdmin(actor *entity.Actor) (*entity.Actor, error)
 	UpdateAdmin(id uint, actor *entity.Actor) (*entity.Actor, error)

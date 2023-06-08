@@ -1,9 +1,9 @@
 package customer
 
 import (
-	"crud/dto"
-	"crud/repository"
 	"github.com/gin-gonic/gin"
+	"github.com/rmfachran/miniproject2/dto"
+	"github.com/rmfachran/miniproject2/repository"
 	"gorm.io/gorm"
 	"net/http"
 	"strconv"
