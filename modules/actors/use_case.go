@@ -14,6 +14,7 @@ type UseCaseActor interface {
 	GetAdminById(id uint) (entity.Actor, error)
 	LoginAdmin(username string, password string) (*entity.Actor, error)
 	GetCustomers(first_name, last_name, email string, page, pageSize int) (*entity.Customer, error)
+	SaveCustomersFromAPI() error
 }
 
 type useCaseActor struct {
@@ -89,13 +90,14 @@ func (uc useCaseActor) LoginAdmin(username string, password string) (*entity.Act
 	if err != nil {
 		return nil, err
 	}
-	pass, err := middleware.HashPassword(password)
+	//pass, err := middleware.HashPassword(password)
 	if err != nil {
 		return nil, err
 	}
-	if admin.Password != pass {
+	if admin.Password != password {
 		return nil, err
 	}
+
 	return admin, nil
 }
 
@@ -104,6 +106,7 @@ func (uc useCaseActor) LoginSuperAdmin(username string, password string) (*entit
 	if err != nil {
 		return nil, err
 	}
+	//pass, err := middleware.HashPassword(password)
 	if admin.Password != password {
 		return nil, err
 	}
