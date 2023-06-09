@@ -16,6 +16,7 @@ type Actor struct {
 func NewActor(dbCrud *gorm.DB) Actor {
 	return Actor{db: dbCrud}
 }
+
 //go:generate mockery --name ActorInterfaceRepo
 type ActorInterfaceRepo interface {
 	CreateAdmin(actor *entity.Actor) (*entity.Actor, error)
@@ -61,7 +62,7 @@ func (repo Actor) DeleteAdmin(id uint, actor *entity.Actor) error {
 
 func (repo Actor) LoginAdmin(username string) (*entity.Actor, error) {
 	admin := &entity.Actor{}
-	err := repo.db.Model(&entity.Actor{}).Where("username = ? AND is_verified = ? AND is_active = ? AND role_id = ?", username, "true", "true", 1).First(admin).Error
+	err := repo.db.Model(&entity.Actor{}).Where("username = ? AND is_verified = ? AND is_active = ? AND role_id = ?", username, "true", "true", 2).First(admin).Error
 	if err != nil {
 		return nil, err
 	}
@@ -70,7 +71,7 @@ func (repo Actor) LoginAdmin(username string) (*entity.Actor, error) {
 
 func (repo Actor) LoginSuperAdmin(username string) (*entity.Actor, error) {
 	admin := &entity.Actor{}
-	err := repo.db.Model(&entity.Actor{}).Where("username = ? AND is_verified = ? AND is_active = ? AND role_id = ?", username, "true", "true", 0).First(admin).Error
+	err := repo.db.Model(&entity.Actor{}).Where("username = ? AND is_verified = ? AND is_active = ? AND role_id = ?", username, "true", "true", 1).First(admin).Error
 	if err != nil {
 		return nil, err
 	}
