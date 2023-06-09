@@ -5,6 +5,7 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"os"
+	"time"
 )
 
 func GormMysql() *gorm.DB {
@@ -19,6 +20,7 @@ func GormMysql() *gorm.DB {
 	for i := 0; i < 5; i++ {
 		db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 		if err == nil {
+			time.Sleep(3)
 			break
 			//log.Println("gorm.open", err)
 		}
