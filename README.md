@@ -1,5 +1,11 @@
 # README #
 
+### Latest Update ###
+
+Use this command to run the program using docker compose:
+
+`docker compose up`
+
 ### Feature Description ###
 
 #### Superadmin ####
@@ -9,7 +15,7 @@
 4. Read all customer data
 5. Read all customer data with parameter (name, email) and pagination
 6. Approve/Reject admin registration
-7. Active/Deadactive admin
+7. Active/Deactivate admin
 8. Read approval request from admin registration
 9. Delete admin data
 10. Read all admin data with parameter (username) and pagination
