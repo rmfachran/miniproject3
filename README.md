@@ -5,7 +5,7 @@
 Use this command to run the program using docker compose:
 
 ```sh
-`docker compose up`
+docker compose up
 ```
 ### Feature Description ###
 
